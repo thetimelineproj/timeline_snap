@@ -1,0 +1,27 @@
+name: timeline # you probably want to 'snapcraft register <name>'
+version: '1.17.0'
+summary: Timeline
+description: |
+  Timeline is a cross-platform application for displaying and navigating events on a timeline
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  timeline:
+    plugs: [x11,desktop,unity7]
+    command: desktop-launch $SNAP/var/opt/timeline/source/timeline.py
+
+parts:
+  timeline:
+    source: https://downloads.sourceforge.net/project/thetimelineproj/thetimelineproj/$SNAPCRAFT_PROJECT_VERSION/timeline-$SNAPCRAFT_PROJECT_VERSION.zip
+    plugin: python
+    python-version: python2
+    python-packages:
+      - humblewx
+    stage-packages: [python-wxgtk3.0]
+    override-build: |
+      snapcraftctl build
+      mkdir -p $SNAPCRAFT_PART_INSTALL/var/opt/timeline
+      cp -R timeline-$SNAPCRAFT_PROJECT_VERSION/* $SNAPCRAFT_PART_INSTALL/var/opt/timeline
+    after: [desktop-gtk2]
