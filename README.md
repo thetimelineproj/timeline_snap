@@ -1,2 +1,2 @@
-# timeline_snap
-Snap port of Timeline
+# Timeline snap
+This project creates a working snap of Timeline.
