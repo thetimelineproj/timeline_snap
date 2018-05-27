@@ -9,7 +9,7 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 apps:
   timeline:
-    plugs: [x11,desktop,unity7]
+    plugs: [x11,desktop,unity7,home]
     command: desktop-launch $SNAP/var/opt/timeline/source/timeline.py
 
 parts:
