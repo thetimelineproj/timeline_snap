@@ -1,4 +1,4 @@
-name: timeline # you probably want to 'snapcraft register <name>'
+name: timeline
 version: '1.17.0'
 summary: Timeline
 description: |
