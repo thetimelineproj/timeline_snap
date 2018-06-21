@@ -4,8 +4,8 @@ summary: Timeline
 description: |
   Timeline is a cross-platform application for displaying and navigating events on a timeline
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: stable
+confinement: strict
 
 apps:
   timeline:
