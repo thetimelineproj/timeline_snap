@@ -9,7 +9,11 @@ confinement: strict
 
 apps:
   timeline:
-    plugs: [x11,desktop,unity7,home]
+    plugs:
+      - x11
+      - desktop
+      - unity7
+      - home
     command: desktop-launch $SNAP/var/opt/timeline/source/timeline.py
 
 parts:
