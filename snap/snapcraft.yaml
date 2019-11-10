@@ -1,5 +1,5 @@
 name: timeline
-version: '1.20.0'
+version: '2.0.0'
 summary: Timeline
 description: |
   Timeline is a cross-platform application for displaying and navigating events on a timeline
@@ -20,9 +20,14 @@ parts:
   timeline:
     source: https://downloads.sourceforge.net/project/thetimelineproj/thetimelineproj/$SNAPCRAFT_PROJECT_VERSION/timeline-$SNAPCRAFT_PROJECT_VERSION.zip
     plugin: python
-    python-version: python2
+    python-version: python3
     python-packages:
       - humblewx
+      - icalendar
+      - Markdown
+      - pysvg-py3
+      - Pillow
+      - https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04/wxPython-4.0.1-cp35-cp35m-linux_x86_64.whl
     stage-packages: [python-wxgtk3.0]
     override-build: |
       snapcraftctl build
