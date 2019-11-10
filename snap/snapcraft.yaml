@@ -14,7 +14,7 @@ apps:
       - desktop
       - unity7
       - home
-    command: desktop-launch $SNAP/var/opt/timeline/source/timeline.py
+    command: desktop-launch python3 $SNAP/var/opt/timeline/source/timeline.py
 
 parts:
   timeline:
@@ -33,4 +33,4 @@ parts:
       snapcraftctl build
       mkdir -p $SNAPCRAFT_PART_INSTALL/var/opt/timeline
       cp -R timeline-$SNAPCRAFT_PROJECT_VERSION/* $SNAPCRAFT_PART_INSTALL/var/opt/timeline
-    after: [desktop-gtk2]
+    after: [desktop-gtk3]
