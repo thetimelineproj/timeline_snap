@@ -8,10 +8,6 @@ grade: stable
 confinement: strict
 base: core18
 
-architectures:
-  - build-on: amd64
-  - build-on: i386
-
 apps:
   timeline:
     command: var/opt/timeline/source/timeline.py
