@@ -14,7 +14,7 @@ architectures:
 
 apps:
   timeline:
-    command: desktop-launch python3 $SNAP/var/opt/timeline/source/timeline.py
+    command: var/opt/timeline/source/timeline.py
     extensions:
       - gnome-3-28
     plugs:
