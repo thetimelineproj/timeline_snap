@@ -6,6 +6,7 @@ description: |
 
 grade: stable
 confinement: strict
+base: core18
 
 architectures:
   - build-on: amd64
@@ -13,12 +14,17 @@ architectures:
 
 apps:
   timeline:
+    command: desktop-launch python3 $SNAP/var/opt/timeline/source/timeline.py
+    extensions:
+      - gnome-3-28
     plugs:
       - x11
       - desktop
+      - desktop-legacy
+      - wayland
       - unity7
       - home
-    command: desktop-launch python3 $SNAP/var/opt/timeline/source/timeline.py
+      - gsettings
 
 parts:
   timeline:
@@ -31,9 +37,9 @@ parts:
       - Markdown
       - pysvg-py3
       - Pillow
-      - wxPython
+    stage-packages:
+      - python3-wxgtk4.0
     override-build: |
       snapcraftctl build
       mkdir -p $SNAPCRAFT_PART_INSTALL/var/opt/timeline
       cp -R timeline-$SNAPCRAFT_PROJECT_VERSION/* $SNAPCRAFT_PART_INSTALL/var/opt/timeline
-    after: [desktop-gtk3]
