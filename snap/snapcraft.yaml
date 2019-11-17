@@ -23,6 +23,7 @@ apps:
       - wayland
       - unity7
       - home
+      - removable-media
       - gsettings
 
 parts:
