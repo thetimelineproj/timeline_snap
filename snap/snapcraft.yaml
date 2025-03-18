@@ -6,7 +6,7 @@ description: |
 
 grade: stable
 confinement: strict
-base: core18
+base: core22
 
 architectures:
   - build-on: amd64
@@ -14,8 +14,7 @@ architectures:
 apps:
   timeline:
     command: var/opt/timeline/source/timeline.py
-    extensions:
-      - gnome-3-28
+    extensions: [gnome]
     plugs:
       - x11
       - desktop
@@ -30,7 +29,6 @@ parts:
   timeline:
     source: https://downloads.sourceforge.net/project/thetimelineproj/thetimelineproj/$SNAPCRAFT_PROJECT_VERSION/timeline-$SNAPCRAFT_PROJECT_VERSION.zip
     plugin: python
-    python-version: python3
     python-packages:
       - humblewx
       - icalendar
