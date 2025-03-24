@@ -38,6 +38,6 @@ parts:
     stage-packages:
       - python3-wxgtk4.0
     override-build: |
-      snapcraftctl build
-      mkdir -p $SNAPCRAFT_PART_INSTALL/var/opt/timeline
-      cp -R timeline-$SNAPCRAFT_PROJECT_VERSION/* $SNAPCRAFT_PART_INSTALL/var/opt/timeline
+      craftctl default
+      mkdir -p $CRAFT_PART_INSTALL/var/opt/timeline
+      cp -R timeline-$SNAPCRAFT_PROJECT_VERSION/* $CRAFT_PART_INSTALL/var/opt/timeline
