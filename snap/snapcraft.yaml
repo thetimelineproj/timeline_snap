@@ -35,8 +35,9 @@ parts:
       - Markdown
       - pysvg-py3
       - Pillow
+      - https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-22.04/wxPython-4.2.1-cp310-cp310-linux_x86_64.whl
     stage-packages:
-      - python3-wxgtk4.0
+      - libsdl2-2.0-0
     override-build: |
       craftctl default
       mkdir -p $CRAFT_PART_INSTALL/var/opt/timeline
